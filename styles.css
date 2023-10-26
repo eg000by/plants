@@ -18,6 +18,11 @@ nav li {
     height: auto;
 }
 
+.logo {
+    max-width: 70px;
+    height: auto; 
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -26,14 +31,27 @@ body {
 }
 
 .main-content {
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 65px;
+    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-
 }
 
+/* Применяем адаптивность при изменении ширины экрана */
+@media screen and (max-width: 768px) {
+    .main-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media screen and (max-width: 480px) {
+    .main-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
 .card {
     width: 300px;
@@ -43,15 +61,15 @@ body {
     border-radius: 10px;
     text-align: center;
     padding: 10px;
-  }
-  
-  .card img {
+}
+
+.card img {
     width: 80%;
     border-radius: 5px;
-  }
-  
-  .card h2 {
+}
+
+.card h2 {
     margin-top: 10px;
     font-size: 1.5em;
     color: #3c763d;
-  }
+}
