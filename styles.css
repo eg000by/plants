@@ -54,22 +54,32 @@ body {
 }
 
 .card {
+    display: flex;
+  flex-direction: column;
     width: 300px;
     height: 400px;
-    background-color: #c1d1c1;
-    border: 1px solid #000;
+    background-color: #55B78B;
+    border: 10px solid #B9A291;
     border-radius: 10px;
     text-align: center;
     padding: 10px;
-}
-
-.card img {
-    width: 80%;
+  }
+  
+  .card img {
+    flex: 7;
+    width: 90%;
     border-radius: 5px;
-}
-
-.card h2 {
-    margin-top: 10px;
+  }
+  .card .details {
+    flex: 3;
+    background-color: #508C6D; 
+    color: #fff;
+  }
+  .card h2 {
     font-size: 1.5em;
-    color: #3c763d;
-}
+    color: #C3FAB4;
+  }
+  .card h3 {
+    font-size: 1.2em;
+    color: #836859;
+  }
