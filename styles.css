@@ -20,7 +20,7 @@ nav li {
 
 .logo {
     max-width: 70px;
-    height: auto; 
+    height: auto;
 }
 
 body {
@@ -35,13 +35,20 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 65px;
     justify-content: center;
+    justify-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
 /* Применяем адаптивность при изменении ширины экрана */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1600px) {
+    .main-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px) {
     .main-content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -54,32 +61,79 @@ body {
 }
 
 .card {
-    display: flex;
-  flex-direction: column;
     width: 300px;
     height: 400px;
+
+    /* Для анимации переворота */
+    position: relative;  
+}
+
+.card .front {
+    display: flex;
+    flex-direction: column;
     background-color: #55B78B;
-    border: 10px solid #B9A291;
+    border: 10px solid #ebdbce;
     border-radius: 10px;
     text-align: center;
-    padding: 10px;
-  }
-  
-  .card img {
+
+    /* Для анимации переворота */
+    z-index: 1;
+    position: relative;
+    backface-visibility: hidden;
+    transition: transform .5s cubic-bezier(.2, .85, .4, 1.275);
+}
+
+.card .back {
+    display: flex;
+    flex-direction: column;
+    background-color: #55B78B;
+    border: 10px solid #ebdbce;
+    border-radius: 10px;
+    text-align: center;
+
+    /* Для анимации переворота */
+    backface-visibility: hidden;
+    top: 0;
+    z-index: 0;
+    position: absolute;
+    transform: rotateY(-180deg);
+    transition: transform .5s cubic-bezier(.2, .85, .4, 1.275);
+}
+/* Для анимации переворота */
+.card:hover .back {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+/* Для анимации переворота */
+.card:hover .front {
+    transform: rotateY(180deg);
+    z-index: -1;
+}
+
+.card img {
     flex: 7;
     width: 90%;
     border-radius: 5px;
-  }
-  .card .details {
+    align-self: center;
+}
+
+.img-container {
+    border: 3px solid black;
+}
+
+.card .details {
     flex: 3;
-    background-color: #508C6D; 
-    color: #fff;
-  }
-  .card h2 {
+    background-color: #508C6D;
+    border: 3px solid black;
+    border-top: 0px;
+}
+
+.card h2 {
     font-size: 1.5em;
-    color: #C3FAB4;
-  }
-  .card h3 {
+    color: #ebdbce;
+}
+
+.card h3 {
     font-size: 1.2em;
-    color: #836859;
-  }
+    color: #e0af93;
+}
