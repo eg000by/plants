@@ -134,3 +134,25 @@ body {
     font-size: 1.2em;
     color: #e0af93;
 }
+
+.details-back{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+    border-top: 0px;
+}
+.details-back img {
+    width: 50px;
+    margin-top: 10px;
+    border-radius: 5px;
+    align-self: center;
+}
+.img-container-back{
+    background-color: #508C6D;
+    border: 1px solid black;
+}
+
+.details-back p {
+    margin-top: auto;
+}
