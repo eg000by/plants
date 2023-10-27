@@ -69,9 +69,7 @@ body {
     position: relative;  
 }
 
-.front, .back {
-    display: flex;
-    flex-direction: column;
+.front, .back {  
     background-color: #55B78B;
     border: 10px solid #ebdbce;
     border-radius: 10px;
@@ -81,6 +79,8 @@ body {
     
 }
 .front {
+    display: flex;
+    flex-direction: column;
     /* Для анимации переворота */
     z-index: 1;
     position: relative;
@@ -136,11 +136,12 @@ body {
 }
 
 .details-back{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-
-    border-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    height: 95%;
+    
 }
 .details-back img {
     width: 50px;
