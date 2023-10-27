@@ -25,11 +25,14 @@ nav li {
 }
 
 body {
+    width: 100%;
+  height: 100vh;
+overflow: hidden;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: rgb(209 170 119);
+    background: linear-gradient(to bottom, rgb(209 170 119), #77b1ea);
 }
 
 .main-content {
