@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plants</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;1,100;1,300&display=swap"
     rel="stylesheet">
 </head>
@@ -18,7 +19,50 @@
   </header>
 
   <div class="main-content">
-    <div class="card">
+    <div class="card" onclick="openModal()" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
+      <div class="front">
+        <h1 class="ru-name">
+          Филодендрон сканденс Бразил
+        </h1>
+        <h2 class="en-name">
+          Philodendron scandens Brasil
+        </h2>
+        <div class="img-container">
+          <img src="/content/plantPhotos/painted1.png" alt="Растение">
+        </div>
+        <div class="bottom-panel">
+          <span class="plant-type-container"><span>Ароидные</span></span>
+          <span class="price-container"><img class="coin" src="content/coin.svg" alt=""><span
+              class="price">10</span></span>
+        </div>
+      </div>
+      <div class="back">
+        <div class="details-back">
+          <div class="img-container-back">
+            <img src="/content/icon/waterFull.svg" alt="">
+            <img src="/content/icon/waterFull.svg" alt="">
+            <img src="/content/icon/waterFull.svg" alt="">
+            <img src="/content/icon/waterEmpty.svg" alt="">
+            <img src="/content/icon/waterEmpty.svg" alt="">
+          </div>
+          <div class="img-container-back">
+            <img src="/content/icon/temp1.svg" alt="">
+            <img src="/content/icon/temp2.svg" alt="">
+            <img src="/content/icon/temp3.svg" alt="">
+            <img src="/content/icon/temp0.svg" alt="">
+          </div>
+          <div class="img-container-back">
+            <img src="/content/icon/sunFull.svg" alt="">
+            <img src="/content/icon/emptySun.svg" alt="">
+            <img src="/content/icon/emptySun.svg" alt="">
+          </div>
+        
+          <p>Филодендрон сканденс Бразил - компактное растение с зелеными и желтыми листьями, идеальное для подвесных горшков. Легкий уход и яркий акцент в интерьере.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
       <div class="front">
         <h1 class="ru-name">
           Филодендрон сканденс Бразил
@@ -60,7 +104,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
       <div class="front">
         <h1 class="ru-name">
           Филодендрон сканденс Бразил
@@ -102,7 +146,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
       <div class="front">
         <h1 class="ru-name">
           Филодендрон сканденс Бразил
@@ -120,49 +164,7 @@
         </div>
       </div>
       <div class="back">
-        <div class="details-back">
-          <div class="img-container-back">
-            <img src="/content/icon/waterFull.svg" alt="">
-            <img src="/content/icon/waterFull.svg" alt="">
-            <img src="/content/icon/waterFull.svg" alt="">
-            <img src="/content/icon/waterEmpty.svg" alt="">
-            <img src="/content/icon/waterEmpty.svg" alt="">
-          </div>
-          <div class="img-container-back">
-            <img src="/content/icon/temp1.svg" alt="">
-            <img src="/content/icon/temp2.svg" alt="">
-            <img src="/content/icon/temp3.svg" alt="">
-            <img src="/content/icon/temp0.svg" alt="">
-          </div>
-          <div class="img-container-back">
-            <img src="/content/icon/sunFull.svg" alt="">
-            <img src="/content/icon/emptySun.svg" alt="">
-            <img src="/content/icon/emptySun.svg" alt="">
-          </div>
-          <p>Филодендрон сканденс Бразил - компактное растение с зелеными и желтыми листьями, идеальное для подвесных горшков. Легкий уход и яркий акцент в интерьере.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="front">
-        <h1 class="ru-name">
-          Филодендрон сканденс Бразил
-        </h1>
-        <h2 class="en-name">
-          Philodendron scandens Brasil
-        </h2>
-        <div class="img-container">
-          <img src="/content/plantPhotos/painted1.png" alt="Растение">
-        </div>
-        <div class="bottom-panel">
-          <span class="plant-type-container"><span>Ароидные</span></span>
-          <span class="price-container"><img class="coin" src="content/coin.svg" alt=""><span
-              class="price">10</span></span>
-        </div>
-      </div>
-      <div class="back">
-        <div class="details-back">
+        <div class="details-back" >
           <div class="img-container-back">
             <img src="/content/icon/waterFull.svg" alt="">
             <img src="/content/icon/waterFull.svg" alt="">
@@ -189,9 +191,21 @@
   </div>
   <!-- Добавьте больше карточек растений сюда -->
   </div>
+  <div class="overlay" >
+    <div class="modal">
+      <!-- Ваше содержимое модального окна здесь -->
+      <span class="close-button" onclick="closeModal()">X</span>
+      <h2>Модальное окно</h2>
+      <p>Здесь может быть ваш контент.</p>
+    </div>
+  </div>
   <footer>
     <p>&copy; 2023 Egor Bulkin & Nikita Bochkov</p>
   </footer>
+
+  
+
+
 </body>
 
 </html>
