@@ -211,13 +211,16 @@ nav li {
 
 .details-back img {
     width: 50px;
+    height: 75px;
     margin-top: 10px;
     border-radius: 5px;
     align-self: center;
 }
 
-.img-container-back {}
+.img-container-back { 
+}
 
 .details-back p {
     margin-top: auto;
+    font-size: 12px;
 }
