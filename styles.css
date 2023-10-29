@@ -6,23 +6,15 @@ body {
     padding: 0;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     padding: 5px;
     display: flex;
     align-items: center;
-    background-color: rgb(144 125 125);
-}
-
-nav {
-    margin-left: auto;
-}
-
-nav li {
-    display: inline;
-    margin-right: 20px;
+    background-color: rgb(204, 202, 202);
 }
 
 .main-logo {
@@ -36,6 +28,7 @@ nav li {
 }
 
 .main-content {
+    flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 65px;
@@ -147,7 +140,7 @@ nav li {
 .en-name {
     margin-top: 0px;
     font-size: 14px;
-    font-weight: 100;
+    font-weight: 300;
     font-style: italic;
 }
 
@@ -173,7 +166,7 @@ nav li {
     border-radius: 10px;
     background-color: #E692E0;
     margin-right: 10px;
-    font-weight: 300;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -217,10 +210,13 @@ nav li {
     align-self: center;
 }
 
-.img-container-back { 
-}
+.img-container-back {}
 
 .details-back p {
     margin-top: auto;
     font-size: 12px;
+}
+
+footer {
+    flex-shrink: 0;
 }
