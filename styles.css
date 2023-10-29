@@ -14,11 +14,11 @@ header {
     padding: 5px;
     display: flex;
     align-items: center;
-    background-color: rgb(204, 202, 202);
+    justify-content: center;
 }
 
 .main-logo {
-    max-width: 70px;
+    max-width: 200px;
     height: auto;
 }
 
