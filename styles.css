@@ -171,6 +171,10 @@ header {
     justify-content: center;
 }
 
+.ficus {
+    background-color: #E88751;
+}
+
 .price-container {
     margin-left: 10px;
     flex: 2;
@@ -208,8 +212,6 @@ header {
     border-radius: 5px;
     align-self: center;
 }
-
-.img-container-back {}
 
 .details-back p {
     margin-top: auto;
