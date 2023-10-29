@@ -1,3 +1,14 @@
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
 header {
     padding: 5px;
     display: flex;
@@ -22,17 +33,6 @@ nav li {
 .logo {
     max-width: 70px;
     height: auto;
-}
-
-body {
-    width: 100%;
-  height: 100vh;
-overflow: hidden;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background: linear-gradient(to bottom, rgb(209 170 119), #77b1ea);
 }
 
 .main-content {
@@ -68,19 +68,46 @@ overflow: hidden;
 .card {
     width: 300px;
     height: 400px;
+    box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.1);
     /* Для анимации переворота */
-    position: relative;  
+    position: relative;
 }
 
-.front, .back {  
-    background-color: #55B78B;
-    border: 10px solid #ebdbce;
-    border-radius: 10px;
+.card::before {
+    content: "";
+    /* Создает пустой псевдоэлемент */
+    width: 90%;
+    /* Растягивает псевдоэлемент на всю ширину карточки */
+    height: 90%;
+    /* Растягивает псевдоэлемент на всю высоту карточки */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Цвет и прозрачность тени */
+    position: absolute;
+    /* Позволяет разместить псевдоэлемент над основным содержимым */
+    top: 10%;
+    /* Размещает псевдоэлемент наверху */
+    left: 10%;
+    /* Размещает псевдоэлемент слева */
+    z-index: -2;
+    /* Располагает псевдоэлемент за основным содержимым */
+    box-shadow:
+        -10px 0 10px rgba(0, 0, 0, 0.1),
+        /* Тень налево */
+        0 -15px 10px rgba(0, 0, 0, 0.1);
+    /* Тень сверху */
+}
+
+.front,
+.back {
+    background-color: #F4FFFD;
+    border: 5px solid #ffffff;
+    border-radius: 20px;
     text-align: center;
     width: 100%;
     height: 100%;
-    
+
 }
+
 .front {
     display: flex;
     flex-direction: column;
@@ -90,6 +117,7 @@ overflow: hidden;
     backface-visibility: hidden;
     transition: transform .5s cubic-bezier(.2, .85, .4, 1.275);
 }
+
 .back {
     /* Для анимации переворота */
     backface-visibility: hidden;
@@ -99,63 +127,101 @@ overflow: hidden;
     transform: rotateY(-180deg);
     transition: transform .5s cubic-bezier(.2, .85, .4, 1.275);
 }
+
+
 /* Для анимации переворота */
 .card:hover .back {
     transform: rotateY(0deg);
     z-index: 2;
 }
+
 /* Для анимации переворота */
 .card:hover .front {
     transform: rotateY(180deg);
     z-index: -1;
 }
 
-.card img {
-    flex: 7;
+/* Тут перед */
+.ru-name {
+    margin-top: 40px;
+    margin-bottom: 5px;
+    font-style: medium;
+    font-size: 16px;
+}
+
+.en-name {
+    margin-top: 0px;
+    font-size: 14px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.img-container img {
     width: 90%;
     border-radius: 5px;
     align-self: center;
 }
 
-.img-container {
-    border: 3px solid black;
+.bottom-panel {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    font-size: 12px;
+    min-height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.card .details {
-    flex: 3;
-    background-color: #508C6D;
-    border: 3px solid black;
-    border-top: 0px;
+.plant-type-container {
+    flex: 8;
+    border-radius: 10px;
+    background-color: #E692E0;
+    margin-right: 10px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card h2 {
-    font-size: 1.5em;
-    color: #ebdbce;
+.price-container {
+    margin-left: 10px;
+    flex: 2;
+    border-radius: 10px;
+    background-color: #E8A8A2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card h3 {
-    font-size: 1.2em;
-    color: #e0af93;
+.coin {
+    height: 15px;
+    margin-left: 5px;
 }
 
-.details-back{
+.price {
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+/* тут зад */
+.details-back {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
     height: 95%;
-    
+
 }
+
 .details-back img {
     width: 50px;
     margin-top: 10px;
     border-radius: 5px;
     align-self: center;
 }
-.img-container-back{
-    background-color: #508C6D;
-    border: 1px solid black;
-}
+
+.img-container-back {}
 
 .details-back p {
     margin-top: auto;
