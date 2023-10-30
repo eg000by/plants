@@ -7,6 +7,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
+    background-color: #dbdad1;
 }
 
 header {
@@ -248,17 +249,23 @@ footer {
   .left-section {
     flex: 1;
     padding: 20px;
-    background-color: #d1c1c1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+    background-color: #dbdad1;
+  }
+
+  .left-section h2{
+    margin-bottom: 100px;
   }
   .right-section {
     flex: 2;
     padding: 20px;
-    background-color: #c1d1d1;
+    background-color: #F4FFFD;
   }
-  
-
-  
-  
   .close-button {
     position: absolute;
     top: 10px;

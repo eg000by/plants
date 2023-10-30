@@ -14,10 +14,10 @@
 
 <body>
   <header>
-    <img class="main-logo" src="/content/logo.svg" alt="Логотип Магазина растений">
+    <img class="main-logo"  srcset="content\logo2.png, /content/logo.svg" alt="Логотип Магазина растений">
   </header>
   <div class="main-content">
-    <div class="card" onclick="openModal()" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
+    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)" onclick="openModal(this)">
       <div class="front">
         <h1 class="ru-name">
           Филодендрон сканденс Бразил
@@ -62,7 +62,7 @@
     <!-- модульное окно -->
     
 
-    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
+    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)" onclick="openModal(this)">
       <div class="front">
         <h1 class="ru-name">
           Фикус Ирен
@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
+    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)" onclick="openModal(this)">
       <div class="front">
         <h1 class="ru-name">
           Монстера Манки
@@ -146,7 +146,7 @@
       </div>
     </div>
 
-    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
+    <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)" onclick="openModal(this)">
       <div class="front">
         <h1 class="ru-name">
           Эпипремнум Хэппи Лиф
@@ -194,15 +194,10 @@
 
   <div class="overlay">
   <div class="modal">
-    <div class="left-section">
-      <span class="close-button" onclick="closeModal()">X</span>
-      <h2>Левая часть</h2>
-      <p>Здесь может быть ваш контент для левой части модального окна.</p>
-      
+    <span class="close-button" onclick="closeModal()">X</span>
+    <div class="left-section">   
     </div>
     <div class="right-section">
-      <h2>Правая часть</h2>
-      <p>Здесь может быть ваш контент для правой части модального окна.</p>
     </div>
   </div>
 </div>
