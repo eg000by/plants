@@ -12,11 +12,22 @@ function resetCard(card) {
   card.style.transform = 'none';
 }
 
-//
-// function openModal() {
-//   document.querySelector('.overlay').style.display = 'flex';
-// }
+const plantData = [
+  {
+    name: "Филодендрон сканденс Бразил",
+    description: "Филодендрон сканденс Бразил - компактное растение с зелеными и желтыми листьями, идеальное для подвесных горшков. Легкий уход и яркий акцент в интерьере.",
+    characteristics: {
+      height: "30 см",
+      leaves: "Зеленые и желтые",
+      care: "Легкий"
+    }
+  },
+  // Добавьте данные для других растений
+];
 
+
+
+  // Функция открытия окна при клике на карточку
 function openModal(card) {
   const modal = document.querySelector(".overlay");
   const modalContent = modal.querySelector(".modal");
@@ -27,18 +38,24 @@ function openModal(card) {
   leftSection.innerHTML = "";
   rightSection.innerHTML = "";
 
-// Извлекаем название растения на русском и его картинку
-const ruName = card.querySelector(".ru-name").textContent;
-const imgContainer = card.querySelector(".img-container").cloneNode(true);
+  // Извлекаем название растения на русском и его картинку
+  const ruName = card.querySelector(".ru-name").textContent.trim();
+  const imgContainer = card.querySelector(".img-container").cloneNode(true);
 
-// Добавляем название и картинку в левую часть модального окна
-leftSection.insertAdjacentHTML("beforeend", `<h2>${ruName}</h2>`);
-leftSection.appendChild(imgContainer);
+  // Добавляем название и картинку в левую часть модального окна
+  leftSection.insertAdjacentHTML("beforeend", `<h2>${ruName}</h2>`);
+  leftSection.appendChild(imgContainer);
+
+  // Ищем в массиве объектов наше растение
+  const selectedPlant = plantData.find(plant => plant.name === ruName);
+
+  // Добавление заголовка
+  rightSection.innerHTML = '<h2 class="plant-info-header">Информация о растении:</h2>';
 
   // Открываем модальное окно
   modal.style.display = "flex";
 }
-
+  // Функция закрытия окна при клике на крестик
 function closeModal() {
   document.querySelector('.overlay').style.display = 'none';
 }

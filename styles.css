@@ -276,3 +276,7 @@ footer {
   .close-button:hover {
     color: red;
   }
+
+  .plant-info-header {
+    margin-top: 90px;
+  }
