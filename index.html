@@ -59,6 +59,8 @@
         </div>
       </div>
     </div>
+    <!-- модульное окно -->
+    
 
     <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)">
       <div class="front">
@@ -178,7 +180,7 @@
           </div>
           <div class="img-container-back">
             <img src="/content/icon/sunFull.svg" alt="">
-            <img src="/content/icon/sunFull.svg" alt="">
+            <img src="/content/icon/sunFull.svg" alt="">  
             <img src="/content/icon/emptySun.svg" alt="">
           </div>
           <p>Epipremnum - является домашним растением с сердцевидными листьями зеленого или желтого цвета. Прост в уходе, вынослив к различным условиям, идеален для интерьеров.</p>
@@ -189,14 +191,23 @@
   </div>
   <!-- Добавьте больше карточек растений сюда -->
   </div>
-  <div class="overlay" >
-    <div class="modal">
-      <!-- Ваше содержимое модального окна здесь -->
+
+  <div class="overlay">
+  <div class="modal">
+    <div class="left-section">
       <span class="close-button" onclick="closeModal()">X</span>
-      <h2>Модальное окно</h2>
-      <p>Здесь может быть ваш контент.</p>
+      <h2>Левая часть</h2>
+      <p>Здесь может быть ваш контент для левой части модального окна.</p>
+      
+    </div>
+    <div class="right-section">
+      <h2>Правая часть</h2>
+      <p>Здесь может быть ваш контент для правой части модального окна.</p>
     </div>
   </div>
+</div>
+
+
   <footer>
     <p>&copy; 2023 Egor Bulkin & Nikita Bochkov</p>
   </footer>

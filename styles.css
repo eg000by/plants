@@ -240,10 +240,23 @@ footer {
     background-color: #fff;
     width: 80%;
     height: 80%;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden; 
   }
+  
+  .left-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #d1c1c1;
+  }
+  .right-section {
+    flex: 2;
+    padding: 20px;
+    background-color: #c1d1d1;
+  }
+  
+
   
   
   .close-button {
