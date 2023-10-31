@@ -19,7 +19,7 @@
   </header>
   <div class="main-content">
     <div class="card" onmousemove="handleMouseMove(event, this)" onmouseleave="resetCard(this)"
-      onclick="openModal(this)">
+      onclick="openModal(this)" ontouchstart="handleTouchStart(event, this)" ontouchend="handleTouchEnd(event, this)">
       <div class="front">
         <h1 class="ru-name">
           Филодендрон сканденс Бразил
@@ -39,7 +39,7 @@
       <div class="back">
         <div class="details-back">
           <div class="img-container-back">
-            <img src="content\icon\waterEmpty.svg" alt="">
+            <img src="content\icon\waterFull.svg" alt="">
             <img src="content/icon/waterFull.svg" alt="">
             <img src="content/icon/waterFull.svg" alt="">
             <img src="content/icon/waterEmpty.svg" alt="">

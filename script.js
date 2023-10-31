@@ -59,3 +59,47 @@ function openModal(card) {
 function closeModal() {
   document.querySelector('.overlay').style.display = 'none';
 }
+
+
+
+
+
+
+
+// Сохраните начальные координаты касания
+let touchStartX = 0;
+let touchStartY = 0;
+
+// Функция начала касания
+function handleTouchStart(event, card) {
+  const touch = event.touches[0];
+  touchStartX = touch.clientX;
+  touchStartY = touch.clientY;
+}
+
+function handleTouchEnd(event, card) {
+  const touch = event.changedTouches[0];
+  const touchEndX = touch.clientX;
+
+  // Определите, что считать "достаточно долгим" свайпом (например, 50 пикселей)
+  const swipeThreshold = 50;
+
+  // Рассчитайте разницу между начальной и конечной позициями по горизонтали
+  const deltaX = touchEndX - touchStartX;
+
+  // Проверьте, прошел ли свайп достаточно далеко и был ли он горизонтальным
+  if (deltaX > swipeThreshold) {
+    // Горизонтальный свайп слева направо (свайп вправо)
+    // Примените transform для переворота карточки вправо
+    card.querySelector('.front').style.transform = 'rotateY(-180deg)';
+    card.querySelector('.front').style.zIndex = '-1';
+    card.querySelector('.back').style.transform = 'rotateY(0deg)';
+    card.querySelector('.back').style.zIndex = '2';
+  } else {
+    // Вернуть карточку в исходное положение, если свайп не соответствует условиям
+    card.querySelector('.front').style.transform = 'none';
+    card.querySelector('.front').style.zIndex = '1'; // Вернуть z-index к исходному значению
+    card.querySelector('.back').style.transform = 'rotateY(-180deg)';
+    card.querySelector('.back').style.zIndex = '0';
+  }
+}
