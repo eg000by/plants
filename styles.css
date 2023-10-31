@@ -223,6 +223,9 @@ footer {
     flex-shrink: 0;
 }
 
+
+/*Модуль*/
+
 .overlay {
     display: none;
     position: fixed;
@@ -295,4 +298,45 @@ footer {
   color: #0d0d0d; 
 }
 
+/*Открывашка внутри блока*/
+.accordion {
+    background-color: #f9f9f9;
+    color: #333;
+    text-align:left;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  .accordion details {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .accordion summary {
+    font-weight: bold;
+   
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .accordion summary::after {
+    content: '▶';
+    font-size: 2em;
+    margin-left: 10px;
+  }
+  
+  .accordion details[open] summary::after {
+    content: '▼';
+  }
+  
+  .accordion div {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
 
