@@ -302,6 +302,7 @@ footer {
     .modal {
       /* Ваши стили для модального окна на мобильных устройствах */
     position: relative;
+    z-index: 6;
     background-color: #fff;
     width: 95%;
     height: 90%;
