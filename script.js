@@ -7,7 +7,10 @@ function handleMouseMove(event, card) {
   const degreeY = (centerX - event.clientX) / 30;
   card.style.transform = `perspective(500px) rotateX(${degreeX}deg) rotateY(${degreeY}deg)`;
 }
-
+  // Функция закрытия окна при клике на крестик
+  function closeModal() {
+    document.querySelector('.overlay').style.display = 'none';
+  }
 function resetCard(card) {
   card.style.transform = 'none';
 }
@@ -152,3 +155,5 @@ function handleTouchEnd(event, card) {
     card.querySelector('.back').style.zIndex = '0';
   }
 }
+
+ 
