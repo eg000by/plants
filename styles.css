@@ -234,19 +234,19 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 1;
-  }
-  
-  .modal {
+}
+
+.modal {
     position: relative;
     background-color: #fff;
     width: 80%;
     height: 80%;
     border-radius: 20px;
     display: flex;
-    overflow: hidden; 
-  }
-  
-  .left-section {
+    overflow: hidden;
+}
+
+.left-section {
     flex: 1;
     padding: 20px;
     display: flex;
@@ -255,68 +255,72 @@ footer {
     align-items: center;
     height: 100%;
     background-color: #dbdad1;
-  }
-  
+}
+
 .left-section img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-  }
+}
 
-  .left-section h2{
+.left-section h2 {
     margin-bottom: 100px;
-  }
-  .right-section {
+}
+
+.right-section {
     flex: 2;
     padding: 20px;
     background-color: #F4FFFD;
-  }
-  .right-section ul {
-    text-align:left
-  }
-  .close-button {
+}
+
+.right-section ul {
+    text-align: left
+}
+
+.close-button {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
-  }
-  
-  .close-button:hover {
-    color: red;
-  }
+}
 
-  .plant-info-header {
+.close-button:hover {
+    color: red;
+}
+
+.plant-info-header {
     margin-top: 90px;
-  }
-.pricePlant{
+}
+
+.pricePlant {
     font-size: 28px;
-    text-align:left;
-  color: #0d0d0d; 
+    text-align: left;
+    color: #0d0d0d;
 }
 
 /* Медиа-запрос для мобильных устройств (ширина экрана < 768px) */
 @media screen and (max-width: 768px) {
     .card {
-      /* Ваши стили для карточек на мобильных устройствах */
+        /* Ваши стили для карточек на мобильных устройствах */
     }
+
     .modal {
-      /* Ваши стили для модального окна на мобильных устройствах */
-    position: relative;
-    z-index: 6;
-    background-color: #fff;
-    width: 95%;
-    height: 90%;
-    border-radius: 20px;
-    display: flex;
-    overflow-y: auto; /* Разрешить вертикальное прокручивание */
-    flex-direction: column;
+        /* Ваши стили для модального окна на мобильных устройствах */
+        position: relative;
+        z-index: 6;
+        background-color: #fff;
+        width: 95%;
+        height: 90%;
+        border-radius: 20px;
+        display: flex;
+        overflow-y: auto;
+        /* Разрешить вертикальное прокручивание */
+        flex-direction: column;
     }
 
     .close-button {
-        position:fixed;
+        position: fixed;
         top: 6%;
         right: 4%;
     }
-  }
-
-
+}
