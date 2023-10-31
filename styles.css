@@ -299,10 +299,9 @@ footer {
     .card {
       /* Ваши стили для карточек на мобильных устройствах */
     }
-  
     .modal {
       /* Ваши стили для модального окна на мобильных устройствах */
-      position: relative;
+    position: relative;
     background-color: #fff;
     width: 95%;
     height: 90%;
@@ -310,6 +309,12 @@ footer {
     display: flex;
     overflow-y: auto; /* Разрешить вертикальное прокручивание */
     flex-direction: column;
+    }
+
+    .close-button {
+        position:fixed;
+        top: 6%;
+        right: 4%;
     }
   }
 
