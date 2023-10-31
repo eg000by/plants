@@ -28,7 +28,6 @@ const plantData = [
       wateringMore: `Этот цветочек любит чтобы его поливали, но не сильно не терпила просто`,
     },
 
-
   },
 
   // Добавьте данные для других растений
@@ -141,7 +140,7 @@ function handleTouchEnd(event, card) {
     card.querySelector('.front').style.transform = 'rotateY(-180deg)';
     card.querySelector('.front').style.zIndex = '-1';
     card.querySelector('.back').style.transform = 'rotateY(0deg)';
-    card.querySelector('.back').style.zIndex = '2';
+    card.querySelector('.back').style.zIndex = '1';
   } else {
     // Вернуть карточку в исходное положение, если свайп не соответствует условиям
     card.querySelector('.front').style.transform = 'none';
