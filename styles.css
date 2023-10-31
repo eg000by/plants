@@ -254,7 +254,6 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100%;
-    
     background-color: #dbdad1;
   }
   
@@ -294,5 +293,24 @@ footer {
     text-align:left;
   color: #0d0d0d; 
 }
+
+/* Медиа-запрос для мобильных устройств (ширина экрана < 768px) */
+@media screen and (max-width: 768px) {
+    .card {
+      /* Ваши стили для карточек на мобильных устройствах */
+    }
+  
+    .modal {
+      /* Ваши стили для модального окна на мобильных устройствах */
+      position: relative;
+    background-color: #fff;
+    width: 95%;
+    height: 90%;
+    border-radius: 20px;
+    display: flex;
+    overflow-y: auto; /* Разрешить вертикальное прокручивание */
+    flex-direction: column;
+    }
+  }
 
 
