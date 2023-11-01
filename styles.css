@@ -269,10 +269,13 @@ footer {
     padding: 20px;
     background-color: #F4FFFD;
     text-align: left;
-
+    overflow-y: auto;
 }
 
-
+.right-section::-webkit-scrollbar {
+    width: 20px;
+    /* Ширина полосы прокрутки */
+}
 
 .close-button {
     position: absolute;
@@ -281,14 +284,33 @@ footer {
     cursor: pointer;
 }
 
-.icon-modal img {
-    width: 20px;
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }
 
-.telephone-a{
+.contacts img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.contacts a {
+    margin-right: 25px;
+    color: #000;
+}
+
+.telephone {
     pointer-events: none;
     text-decoration: none;
-    color: #000;
+}
+
+.small-letters {
+    font-size: 12px;
+}
+
+.very-small-letters {
+    font-size: 10px;
 }
 
 
@@ -328,7 +350,13 @@ footer {
     content: '🢓';
 }
 
+summary {
+    margin-left: 5px;
+}
 
+.accordio-summary {
+    margin-left: 5px;
+}
 
 .close-button:hover {
     color: red;
@@ -350,9 +378,6 @@ footer {
 
 /* Медиа-запрос для мобильных устройств (ширина экрана < 768px) */
 @media screen and (max-width: 768px) {
-    .card {
-        /* Ваши стили для карточек на мобильных устройствах */
-    }
 
     .card::before {
         content: "⟶";
@@ -401,7 +426,9 @@ footer {
         flex-direction: column;
     }
 
-
+    .right-section {
+        overflow-y: unset;
+    }
 
     .close-button {
         position: fixed;
@@ -409,8 +436,8 @@ footer {
         right: 4%;
     }
 
-    .icon-modal a {
-        pointer-events:all;
+    .contacts a {
+        pointer-events: all;
     }
-    
+
 }

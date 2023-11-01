@@ -80,7 +80,7 @@ function openModal(card) {
             <summary>
               <p>Как часто поливать?</p>
             </summary>
-            <div class="accordioSummary">
+            <div class="accordio-summary">
               <p>${characteristics.wateringMore}</p>
             </div>
           </details>
@@ -88,7 +88,7 @@ function openModal(card) {
             <summary>
               <p>Где разместить?</p>
             </summary>
-            <div class="accordioSummary">
+            <div class="accordio-summary">
               <p>${characteristics.lightMore}</p>
             </div>
           </details>
@@ -96,7 +96,7 @@ function openModal(card) {
             <summary>
               <p>Как ухаживать?</p>
             </summary>
-            <div class="accordioSummary">
+            <div class="accordio-summary">
               <p>${characteristics.beginnerMore}</p>
             </div>
           </details>
@@ -104,7 +104,7 @@ function openModal(card) {
             <summary>
               <p>Информация о доставке и размерах растений</p>
             </summary>
-            <div class="accordioSummary">
+            <div class="accordio-summary">
               <p> <b> Доставка: </b> <br>
               Мы осуществляем доставку с использованием надежной службы СДЭК с отслеживанием заказа.<br>
               <b> Сроки доставки:</b> <br>
@@ -115,10 +115,10 @@ function openModal(card) {
           </details>
         </div>
         <p><b> Как заказать?</b> <br>У нас заказать растения легко и удобно. Мы предоставляем несколько вариантов для вашего комфорта: </p>
-        <div class ="icon-modal">  <img src="content/icon/telegram.svg" alt="телеграм"> <a href=”https://t.me/eg0by”>Написать</a> <img src="content/icon/phone.svg" alt="телефон"> <a class="telephone-a" href=”tel:+79277502378”>+7(927)750-23-78</a> </div>
+        <div class="contacts">  <img src="content/icon/telegram.svg" alt="телеграм"> <a href="https://t.me/eg0by">Написать</a> <img src="content/icon/phone.svg" alt="телефон"> <a class="telephone" href=”tel:+79277502378”>+7(927)750-23-78</a> </div>
        
-        <p> Наши специалисты готовы принять ваш заказ и помочь с выбором растений. Мы делаем процесс заказа максимально простым и удобным для вас. </p>
-        <p>Доставка рассчитывается при оформлении заказа.</p>`
+        <p class="small-letters"> Наши специалисты готовы принять ваш заказ и помочь с выбором растений. Мы делаем процесс заказа максимально простым и удобным для вас. </p>
+        <p class="very-small-letters">Доставка рассчитывается при оформлении заказа.</p>`
     );
 
     // Открываем модальное окно
