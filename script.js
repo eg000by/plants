@@ -20,7 +20,7 @@ const plantData = [
     name: "Филодендрон сканденс Бразил",
     description: "Филодендрон сканденс Бразил - компактное растение с зелеными и желтыми листьями, идеальное для подвесных горшков. Легкий уход и яркий акцент в интерьере.",
     price: `10`,
-    image: "content/plantPhotos/plant1.png",
+    image: "content/plantPhotos/plant1.jpg",
     characteristics: {
       height: "30 см",
       care: "Легкий",
@@ -36,6 +36,8 @@ const plantData = [
 
 // Функция открытия окна при клике на карточку
 function openModal(card) {
+  document.body.classList.add('modal-open');
+
   const modal = document.querySelector(".overlay");
   const modalContent = modal.querySelector(".modal");
   const leftSection = modalContent.querySelector(".left-section");
@@ -96,6 +98,7 @@ function openModal(card) {
 
     // Открываем модальное окно
     modal.style.display = "flex";
+    
   }
 }
 
@@ -104,6 +107,7 @@ function openModal(card) {
 // Функция закрытия окна при клике на крестик
 function closeModal() {
   document.querySelector('.overlay').style.display = 'none';
+  document.body.classList.remove('modal-open');
 }
 
 

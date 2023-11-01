@@ -65,7 +65,7 @@ header {
     position: relative;
 }
 
-.card::before {
+.card::after {
     content: "";
     /* Создает пустой псевдоэлемент */
     width: 90%;
@@ -342,11 +342,42 @@ footer {
     color: #0d0d0d;
 }
 
+.modal-open {
+    overflow: hidden;
+  }
+
 /* Медиа-запрос для мобильных устройств (ширина экрана < 768px) */
 @media screen and (max-width: 768px) {
     .card {
         /* Ваши стили для карточек на мобильных устройствах */
     }
+
+    .card::before {
+        content: "⟶"; /* Стрелка вправо */
+        position: absolute;
+        top: -23px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px; /* Размер иконки стрелки */
+        opacity: 0;
+        pointer-events: none; /* Стрелка не должна взаимодействовать с событиями */
+      }
+      
+      @keyframes arrowAnimation {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      
+      .card.show-arrow::before {
+        animation: arrowAnimation 3s infinite; /* Время анимации исчезновения/появления и бесконечное повторение */
+      }
 
     .modal {
         /* Ваши стили для модального окна на мобильных устройствах */
