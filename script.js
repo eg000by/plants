@@ -19,13 +19,14 @@ const plantData = [
   {
     name: "Филодендрон сканденс Бразил",
     description: "Филодендрон сканденс Бразил - компактное растение с зелеными и желтыми листьями, идеальное для подвесных горшков. Легкий уход и яркий акцент в интерьере.",
-    price: `10`,
+    price: `120`,
     image: "content/plantPhotos/plant1.jpg",
     characteristics: {
-      height: "30 см",
+      height: "Ширина 12 см x Высота 15 см",
       care: "Легкий",
-      wateringLow: `Поливайте его 2 раза в неделю`,
-      wateringMore: `Этот цветочек любит чтобы его поливали, но не сильно не терпила просто`,
+      wateringMore: `Поливайте его 2 раза в неделю. Всегда проверяйте свои растения перед поливом, верхний слой почвы должен быть сухим на ощупь. Для суккулентов дайте смеси для заливки полностью высохнуть, прежде чем снова поливать.`,
+      beginnerMore:`Если вы начинающий садовод, это отличный выбор для вас. Растение будет процветать в вашем путешествии по изучению садоводства методом проб и ошибок.`,
+      lightMore:`Нуждается в ярком непрямом солнечном свете. Разместите свои растения на подоконниках, где они могут получать как можно более яркий рассеянный свет. Яркий непрямой свет - это когда растение находится в пределах пары футов от естественного источника света.`,
     },
 
   },
@@ -64,44 +65,79 @@ function openModal(card) {
     img.src = imgSrc;
     img.alt = ruName;
     leftSection.appendChild(img);
+    
+   
 
     // Добавляем описание растения в правую часть модального окна
     rightSection.insertAdjacentHTML(
       "beforeend",
       `<h2>${ruName}</h2>
         <p>${description}</p>
-        <div class="pricePlant"> Цена: ${selectedPlant.price}</div>
-        <h3>Характеристики:</h3>
-        <ul>
-          <li>Высота: ${characteristics.height}</li>
-          <li>Уход: ${characteristics.care}</li>
-        </ul>
+        <div class="pricePlant"> ₽ ${selectedPlant.price}</div>
+        <p> <b> Размер:</b> ${characteristics.height}</p>
         <div class="accordion"> 
-          <details>
+          <details open onclick="closeAllOtherDetails(this)">
             <summary>
-              <p>${characteristics.wateringLow}</p>
+              <p>Как часто поливать?</p>
             </summary>
             <div class="accordioSummary">
               <p>${characteristics.wateringMore}</p>
             </div>
           </details>
-          <details>
+          <details onclick="closeAllOtherDetails(this)">
             <summary>
-              <p>${characteristics.wateringLow}</p>
+              <p>Где разместить?</p>
             </summary>
             <div class="accordioSummary">
-              <p>${characteristics.wateringMore}</p>
+              <p>${characteristics.lightMore}</p>
             </div>
           </details>
-        </div>`
+          <details onclick="closeAllOtherDetails(this)">
+            <summary>
+              <p>Как ухаживать?</p>
+            </summary>
+            <div class="accordioSummary">
+              <p>${characteristics.beginnerMore}</p>
+            </div>
+          </details>
+          <details onclick="closeAllOtherDetails(this)">
+            <summary>
+              <p>Информация о доставке и размерах растений</p>
+            </summary>
+            <div class="accordioSummary">
+              <p> <b> Доставка: </b> <br>
+              Мы осуществляем доставку с использованием надежной службы СДЭК с отслеживанием заказа.<br>
+              <b> Сроки доставки:</b> <br>
+              Сроки доставки составляют 7-10 рабочих дней. Обычно доставка происходит быстрее, но учитывайте указанный интервал.<br>
+              <b> Регионы доставки:</b> <br>
+              Мы доставляем наши растения по всей России. Однако, пожалуйста, обратите внимание, что некоторые удаленные районы могут иметь более длительные сроки доставки.<br> </p>
+            </div>
+          </details>
+        </div>
+        <p><b> Как заказать?</b> <br>У нас заказать растения легко и удобно. Мы предоставляем несколько вариантов для вашего комфорта: </p>
+        <div class ="icon-modal">  <img src="content/icon/telegram.svg" alt="телеграм"> <a href=”https://t.me/eg0by”>Написать</a> <img src="content/icon/phone.svg" alt="телефон"> <a class="telephone-a" href=”tel:+79277502378”>+7(927)750-23-78</a> </div>
+       
+        <p> Наши специалисты готовы принять ваш заказ и помочь с выбором растений. Мы делаем процесс заказа максимально простым и удобным для вас. </p>
+        <p>Доставка рассчитывается при оформлении заказа.</p>`
     );
 
     // Открываем модальное окно
     modal.style.display = "flex";
+
+    
     
   }
 }
 
+// Закрыие акордионов лишнее лишнее
+function closeAllOtherDetails(currentDetail) {
+  const allDetails = document.querySelectorAll('.accordion details');
+  allDetails.forEach(detail => {
+    if (detail !== currentDetail) {
+      detail.removeAttribute('open');
+    }
+  });
+}
 
 
 // Функция закрытия окна при клике на крестик
@@ -109,6 +145,8 @@ function closeModal() {
   document.querySelector('.overlay').style.display = 'none';
   document.body.classList.remove('modal-open');
 }
+
+
 
 
 

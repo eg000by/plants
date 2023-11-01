@@ -268,11 +268,11 @@ footer {
     flex: 2;
     padding: 20px;
     background-color: #F4FFFD;
+    text-align: left;
+
 }
 
-.right-section ul {
-    text-align: left
-}
+
 
 .close-button {
     position: absolute;
@@ -281,47 +281,55 @@ footer {
     cursor: pointer;
 }
 
+.icon-modal img {
+    width: 20px;
+}
+
+.telephone-a{
+    pointer-events: none;
+    text-decoration: none;
+    color: #000;
+}
+
+
 /*Открывашка внутри блока*/
 .accordion {
     background-color: #f9f9f9;
     color: #333;
-    text-align:left;
-    border: 1px solid #ddd;
+    text-align: left;
+
     border-radius: 4px;
     margin: 10px 0;
     padding: 10px;
-  }
-  
-  .accordion details {
+}
+
+.accordion details {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .accordion summary {
+}
+
+.accordion summary {
     font-weight: bold;
-   
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .accordion summary::after {
-    content: '▶';
+}
+
+.accordion summary::after {
+    content: '🢑';
     font-size: 2em;
     margin-left: 10px;
-  }
-  
-  .accordion details[open] summary::after {
-    content: '▼';
-  }
-  
-  .accordion div {
-    padding: 10px;
-    margin-top: 10px;
-  }
-  
+
+}
+
+.accordion details[open] summary::after {
+    content: '🢓';
+}
+
+
+
 .close-button:hover {
     color: red;
 }
@@ -338,7 +346,7 @@ footer {
 
 .modal-open {
     overflow: hidden;
-  }
+}
 
 /* Медиа-запрос для мобильных устройств (ширина экрана < 768px) */
 @media screen and (max-width: 768px) {
@@ -347,31 +355,37 @@ footer {
     }
 
     .card::before {
-        content: "⟶"; /* Стрелка вправо */
+        content: "⟶";
+        /* Стрелка вправо */
         position: absolute;
         top: -23px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 20px; /* Размер иконки стрелки */
+        font-size: 20px;
+        /* Размер иконки стрелки */
         opacity: 0;
-        pointer-events: none; /* Стрелка не должна взаимодействовать с событиями */
-      }
-      
-      @keyframes arrowAnimation {
+        pointer-events: none;
+        /* Стрелка не должна взаимодействовать с событиями */
+    }
+
+    @keyframes arrowAnimation {
         0% {
-          opacity: 0;
+            opacity: 0;
         }
+
         50% {
-          opacity: 1;
+            opacity: 1;
         }
+
         100% {
-          opacity: 0;
+            opacity: 0;
         }
-      }
-      
-      .card.show-arrow::before {
-        animation: arrowAnimation 3s infinite; /* Время анимации исчезновения/появления и бесконечное повторение */
-      }
+    }
+
+    .card.show-arrow::before {
+        animation: arrowAnimation 3s infinite;
+        /* Время анимации исчезновения/появления и бесконечное повторение */
+    }
 
     .modal {
         /* Ваши стили для модального окна на мобильных устройствах */
@@ -387,9 +401,16 @@ footer {
         flex-direction: column;
     }
 
+
+
     .close-button {
         position: fixed;
         top: 6%;
         right: 4%;
     }
+
+    .icon-modal a {
+        pointer-events:all;
+    }
+    
 }
