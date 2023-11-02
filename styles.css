@@ -339,15 +339,14 @@ footer {
     align-items: center;
 }
 
+/* Стилизация иконок стрелочек */
 .accordion summary::after {
-    content: '🢑';
-    font-size: 2em;
-    margin-left: 10px;
-
+  content: "↓"; /* Иконка стрелочки вниз */
+  font-size: 30px;
 }
 
 .accordion details[open] summary::after {
-    content: '🢓';
+  content: "↑"; /* Иконка стрелочки вверх, когда раздел открыт */
 }
 
 summary {
