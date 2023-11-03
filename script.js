@@ -192,7 +192,7 @@ function closeModal() {
 // Сохраните начальные координаты касания
 let touchStartX = 0;
 let touchStartY = 0;
-
+let cardFlipped = false;
 // Функция начала касания
 function handleTouchStart(event, card) {
   const touch = event.touches[0];
@@ -209,21 +209,26 @@ function handleTouchEnd(event, card) {
 
   // Рассчитайте разницу между начальной и конечной позициями по горизонтали
   const deltaX = touchEndX - touchStartX;
+  const absoluteDeltaX = Math.abs(deltaX);
 
-  // Проверьте, прошел ли свайп достаточно далеко и был ли он горизонтальным
-  if (deltaX > swipeThreshold) {
-    // Горизонтальный свайп слева направо (свайп вправо)
-    // Примените transform для переворота карточки вправо
-    card.querySelector('.front').style.transform = 'rotateY(-180deg)';
-    card.querySelector('.front').style.zIndex = '-1';
-    card.querySelector('.back').style.transform = 'rotateY(0deg)';
-    card.querySelector('.back').style.zIndex = '1';
-  } else {
-    // Вернуть карточку в исходное положение, если свайп не соответствует условиям
-    card.querySelector('.front').style.transform = 'none';
-    card.querySelector('.front').style.zIndex = '1'; // Вернуть z-index к исходному значению
-    card.querySelector('.back').style.transform = 'rotateY(-180deg)';
-    card.querySelector('.back').style.zIndex = '0';
+  if (absoluteDeltaX > swipeThreshold) {
+    // Проверьте состояние карточки и примените соответствующий transform
+    if (cardFlipped) {
+      // Если карточка уже перевернута, переверните ее обратно
+      card.querySelector('.front').style.transform = 'rotateY(0deg)';
+      card.querySelector('.front').style.zIndex = '1';
+      card.querySelector('.back').style.transform = 'rotateY(-180deg)';
+      card.querySelector('.back').style.zIndex = '0';
+    } else {
+      // Если карточка не перевернута, переверните ее вправо
+      card.querySelector('.front').style.transform = 'rotateY(-180deg)';
+      card.querySelector('.front').style.zIndex = '-1';
+      card.querySelector('.back').style.transform = 'rotateY(0deg)';
+      card.querySelector('.back').style.zIndex = '1';
+    }
+
+    // Инвертируйте состояние карточки
+    cardFlipped = !cardFlipped;
   }
 }
 
