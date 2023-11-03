@@ -39,25 +39,6 @@ header {
     padding: 20px;
 }
 
-/* Применяем адаптивность при изменении ширины экрана */
-@media screen and (max-width: 1600px) {
-    .main-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .main-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .main-content {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
 .card {
     width: 300px;
     height: 400px;
@@ -375,8 +356,17 @@ summary {
     overflow: hidden;
 }
 
-/* Медиа-запрос для мобильных устройств (ширина экрана < 768px) */
-@media screen and (max-width: 768px) {
+/* Применяем адаптивность при изменении ширины экрана */
+@media screen and (max-width: 1600px) {
+    .main-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .card::before {
         content: "⟶";
@@ -437,6 +427,11 @@ summary {
 
     .contacts a {
         pointer-events: all;
-    }
+    }  
+}
 
+@media screen and (max-width: 780px) {
+    .main-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
