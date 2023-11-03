@@ -15,7 +15,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fcfaf5;
 }
+
+.site-title {
+    font-size: 20px;
+    display: flex;
+    color: #333;
+    align-items: center;
+  }
+
 
 .main-logo {
     max-width: 200px;
@@ -367,6 +376,9 @@ summary {
     .main-content {
         grid-template-columns: repeat(2, 1fr);
     }
+    .site-title {
+       font-size: 15px;
+    }
 
     .card::before {
         content: "⟶";
@@ -433,5 +445,11 @@ summary {
 @media screen and (max-width: 780px) {
     .main-content {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .site-title {
+        font-size: 12px;
+     }
+    .main-logo {
+        max-width: 100px;
     }
 }
