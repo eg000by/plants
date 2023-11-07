@@ -218,7 +218,7 @@ function handleTouchEnd(event, card) {
   const touchEndX = touch.clientX;
 
   // Определите, что считать "достаточно долгим" свайпом (например, 50 пикселей)
-  const swipeThreshold = 50;
+  const swipeThreshold = 150;
 
   // Рассчитайте разницу между начальной и конечной позициями по горизонтали
   const deltaX = touchEndX - touchStartX;
