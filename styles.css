@@ -27,8 +27,8 @@ header {
 
 
 .main-logo {
-    max-width: 200px;
-    height: auto;
+    width: 200px;
+    height: 200px;
 }
 
 .logo {
@@ -379,6 +379,11 @@ summary {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .main-logo {
+        width: 150px;
+        height: 150px;
+    }
+
     .site-title {
         font-size: 15px;
     }
@@ -455,6 +460,7 @@ summary {
     }
 
     .main-logo {
-        max-width: 100px;
+        width: 100px;
+        height: 100px;
     }
 }

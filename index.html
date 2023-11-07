@@ -27,6 +27,7 @@
   <script src="script.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;1,100;1,300&display=swap"
     rel="stylesheet">
+    <link rel="preload" as="image" type="image/webp" href="content\logo2.webp"/>
   <meta name="description"
     content="Купите красивые комнатные растения на нашем уникальном онлайн-магазине в стиле карточной игры. Разнообразие растений, описания, советы по уходу и быстрая доставка. Преобразите свой дом с нашими растениями! Соберите собственную коллекцию карточек с растениями.">
 </head>
@@ -35,7 +36,10 @@
   <header>
     <div class="site-title">
     <div>Собирай моменты природы</div>
-      <img class="main-logo" srcset="content\logo2.png, /content/logo.svg" alt="Логотип Магазина растений">
+    <picture>
+      <source srcset="content\logo2.webp" type="image/webp" />
+      <img class="main-logo" src="content/logo2.png" alt="Логотип" />
+    </picture>
     <div>Коллекционируй карточки</div>
     </div>
   </header>
